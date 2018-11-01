@@ -16,6 +16,8 @@ def run_x_sims(manifest_pathname,rocket_type,output_list,phase,x):
         all_results.append(run_one_sim(manifest_pathname,rocket_type))
     output_list[phase-1] = mean(all_results)
 
+## Change x to change the number of simulations.
+
 x = 1000
 
 print("Running " + str(x) + " simulations for each rocket type and Phase...")
