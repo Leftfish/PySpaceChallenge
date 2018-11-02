@@ -1,6 +1,5 @@
 ﻿import random
 
-
 class Item:
     """ Simulates payload """ 
     def __init__(self):
@@ -105,11 +104,11 @@ class Simulation:
         payload_manifest = []
 
         try:
-            file = open(pathname,'r')
-            for line in file:
-                new_item = Item()
-                new_item.weight = int(line.split('=')[1].rstrip())
-                payload_manifest.append(new_item)
+            with open(pathname,'r') as file:
+                for line in file:
+                    new_item = Item()
+                    new_item.weight = int(line.split('=')[1].rstrip())
+                    payload_manifest.append(new_item)
             return payload_manifest
         
         except Exception as e:
